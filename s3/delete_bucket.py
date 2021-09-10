@@ -47,14 +47,14 @@ def main():
             
             print(f'removing object versions...')
             
-            versions = client.list_object_versions(Bucket=bucket)
+            versions = client.list_object_versions(Bucket=bucket) # list all versions in this bucket
             if 'Versions' in versions and len(versions['Versions'])>0:
                 s3_bucket = s3.Bucket(bucket)
-                s3_bucket.object_versions.delete()
+                s3_bucket.object_versions.delete() # delete all versions
                 time.sleep(1)
                
             print(f'deleting bucket {bucket}...')
-            client.delete_bucket(Bucket=bucket)
+            client.delete_bucket(Bucket=bucket) # delete bucket
             time.sleep(3)
 
 
