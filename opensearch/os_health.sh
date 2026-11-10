@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # OpenSearch health snapshot from CloudWatch (AWS/ES namespace).
-# Usage: awsexec prod-readonly -- bash os_health.sh [HOURS=6] [PERIOD_SECONDS=300]
 set -euo pipefail
 R=ap-southeast-1
 HOURS=${1:-6}
